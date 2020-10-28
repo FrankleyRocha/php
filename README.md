@@ -1,6 +1,8 @@
 # Exemplo básico de acesso ao banco MySQL com PHP e PDO
 
-# Se preferir você pode utilizar o docker para rodar esse exemplo
+## Rodando aplicação com docker
+
+- Se preferir você pode utilizar o docker para rodar esse exemplo
 
 - A pasta app, apontará para a rota raiz em http://localhost
 
