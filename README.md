@@ -1,4 +1,10 @@
-# comando docker para preparar ambiente LAMP veja [docker-lamp](https://github.com/mattrayner/docker-lamp)
+# Exemplos utilizando linguagem PHP
+
+### app/pdo - exemplo básico de operações SQL CRUD com PDO e mysql
+
+# preparando ambiente com docker
+
+Comando docker para preparar ambiente LAMP veja [docker-lamp](https://github.com/mattrayner/docker-lamp)
 
 ```bash
 docker run -it --rm \
@@ -8,7 +14,5 @@ docker run -it --rm \
     mattrayner/lamp:latest-1804
 ```
 
-## a pasta app, apontará para a pasta raiz de http://localhost
-## a pasta mysql, conterá os dados do banco mysql
-
-### pdo - exemplo básico de CRUD com PDO e mysql
+- A pasta app, apontará para a pasta raiz de http://localhost
+- A pasta mysql, conterá os dados do banco mysql
