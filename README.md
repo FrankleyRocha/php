@@ -2,22 +2,24 @@
 
 ## Rodando aplicação com docker
 
-- Se preferir você pode utilizar o docker para rodar esse exemplo
+- Se você preferir, pode utilizar o docker para rodar esse exemplo
 
 - A pasta app, apontará para a rota raiz em http://localhost
 
-Comando docker para preparar ambiente LAMP:
 - Veja mais informações em: [docker-lamp](https://github.com/mattrayner/docker-lamp)
 
+Para inicializar ambiente LAMP, utilizando docker, execute no terminal:
+
 ```bash
-docker run -it --rm \
+docker run \
     -p "80:80" \
     -v ${PWD}/app:/app \
     --name php_pdo_example \
     mattrayner/lamp:latest-1804
 ```
 
-Logo após a inicialização:
+Para criar a base de dados, logo após a inicialização, execute no terminal:
+
 ```bash
 docker exec php_pdo_example sh -c 'mysql -u root < /app/db.sql'
 ```
