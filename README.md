@@ -3,7 +3,6 @@
 # Se preferir você pode utilizar o docker para rodar esse exemplo
 
 - A pasta app, apontará para a rota raiz em http://localhost
-- A pasta mysql, conterá os dados do banco mysql
 
 Comando docker para preparar ambiente LAMP:
 - Veja mais informações em: [docker-lamp](https://github.com/mattrayner/docker-lamp)
@@ -12,8 +11,11 @@ Comando docker para preparar ambiente LAMP:
 docker run -it --rm \
     -p "80:80" \
     -v ${PWD}/app:/app \
-    -v ${PWD}/mysql:/var/lib/mysql \
+    --name php_pdo_example \
     mattrayner/lamp:latest-1804
 ```
 
-
+Logo após a inicialização:
+```bash
+docker exec php_pdo_example sh -c 'mysql -u root < /app/db.sql'
+```
