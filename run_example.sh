@@ -8,8 +8,8 @@ docker run \
     -d \
     mattrayner/lamp:latest-1804
 
-#aguarda 15 segundos para inicializar os serviçes (apache, mysql e etç)
-sleep 15
+#aguarda um minuto para inicializar os serviçes (apache, mysql e etç)
+sleep 60
 
 #criação do banco de dados
 docker exec php_pdo_example sh -c 'mysql -u root < /app/db.sql'
