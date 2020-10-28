@@ -10,6 +10,8 @@
 
 - Para inicializar ambiente LAMP, utilizando docker, execute no terminal:
 ```bash
+git clone --depth 1 https://github.com/FrankleyRocha/php_pdo_example
+cd php_pdo_example
 ./run_example.sh
 ```
 
