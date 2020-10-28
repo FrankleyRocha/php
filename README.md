@@ -2,7 +2,7 @@
 
 ## Rodando aplicação com docker
 
-- Se você preferir, pode utilizar o docker para rodar esse exemplo
+- Se você preferir, pode utilizar o docker para rodar a aplicação
 
 - A pasta app, apontará para a rota raiz em http://localhost
 
