@@ -1,10 +1,12 @@
-# Exemplos utilizando linguagem PHP
+# Exemplos básico de acesso ao banco MySQL com PHP e PDO
 
-### [app/pdo](https://github.com/FrankleyRocha/php/tree/main/app/pdo) - exemplo básico de operações SQL CRUD com PDO e mysql
+# Se preferir você pode utilizar o docker para rodar esse exemplo
 
-# preparando ambiente com docker
+- A pasta app, apontará para a pasta raiz de http://localhost
+- A pasta mysql, conterá os dados do banco mysql
 
-Comando docker para preparar ambiente LAMP veja [docker-lamp](https://github.com/mattrayner/docker-lamp)
+Comando docker para preparar ambiente LAMP:
+- Veja mais informações em: [docker-lamp](https://github.com/mattrayner/docker-lamp)
 
 ```bash
 docker run -it --rm \
@@ -14,5 +16,4 @@ docker run -it --rm \
     mattrayner/lamp:latest-1804
 ```
 
-- A pasta app, apontará para a pasta raiz de http://localhost
-- A pasta mysql, conterá os dados do banco mysql
+
