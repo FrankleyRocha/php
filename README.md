@@ -19,7 +19,7 @@ git clone https://github.com/FrankleyRocha/php_pdo_example
 cd php_pdo_example
 ```
 
-3) Rode o script:
+3) Rode o script (na pasta da aplicação):
 ```bash
 ./run_example.sh
 ```
