@@ -12,8 +12,8 @@ function create_php_pdo_example_db {
     #criação do banco de dados
     docker exec php_pdo_example \
         sh -c 'mysql -u root < /app/db.sql' \
-            2>/dev/null \
-            >/dev/null
+        2>/dev/null \
+        >/dev/null
 }
 
 echo 'aguarde um momento, inicializando.'
@@ -24,8 +24,11 @@ until [ $? -eq 0 ]; do
     #aguarda um minuto para inicializar os serviçes (apache, mysql e etç)
     sleep 1
     #criação do banco de dados
+    printf '.'
     create_php_pdo_example_db
 done
+
+echo '';
 
 if [ $? -eq 0 ]
 then
