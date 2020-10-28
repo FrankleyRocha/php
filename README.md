@@ -1,6 +1,6 @@
 # Exemplos utilizando linguagem PHP
 
-### app/pdo - exemplo básico de operações SQL CRUD com PDO e mysql
+### [app/pdo](https://github.com/FrankleyRocha/php/tree/main/app/pdo) - exemplo básico de operações SQL CRUD com PDO e mysql
 
 # preparando ambiente com docker
 
