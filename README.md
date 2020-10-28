@@ -15,6 +15,7 @@ docker run \
     -p "80:80" \
     -v ${PWD}/app:/app \
     --name php_pdo_example \
+    -d \
     mattrayner/lamp:latest-1804
 ```
 
