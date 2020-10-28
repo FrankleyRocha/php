@@ -12,7 +12,7 @@
 
 1) Clone o repositório:
 ```bash
-git clone --depth 1 https://github.com/FrankleyRocha/php_pdo_example
+git clone https://github.com/FrankleyRocha/php_pdo_example
 ```
 2) Acesse a pasta da aplicação:
 ```bash
