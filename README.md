@@ -8,34 +8,22 @@
 
 - Veja mais informações em: [docker-lamp](https://github.com/mattrayner/docker-lamp)
 
-Para inicializar ambiente LAMP, utilizando docker, execute no terminal:
-
+- Para inicializar ambiente LAMP, utilizando docker, execute no terminal:
 ```bash
-docker run \
-    -p "80:80" \
-    -v ${PWD}/app:/app \
-    --name php_pdo_example \
-    -d \
-    mattrayner/lamp:latest-1804
+./run_example.sh
 ```
 
-Para criar a base de dados, logo após a inicialização, execute no terminal:
-
-```bash
-docker exec php_pdo_example sh -c 'mysql -u root < /app/db.sql'
-```
-
-Para parar a execução do container, execute no terminal:
+- Para parar a execução do container, execute no terminal:
 ```bash
 docker stop php_pdo_example
 ```
 
-Para iniciar a execução do container, execute no terminal:
+- Para iniciar a execução do container, execute no terminal:
 ```bash
 docker start php_pdo_example
 ```
 
-Para remover o container, execute no terminal:
+- Para parar e remover o container, execute no terminal:
 ```bash
 docker rm php_pdo_example --force
 ```
