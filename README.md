@@ -8,24 +8,33 @@
 
 - Veja mais informações em: [docker-lamp](https://github.com/mattrayner/docker-lamp)
 
-- Para inicializar ambiente LAMP, utilizando docker, execute no terminal:
+- Para inicializar ambiente LAMP, utilizando docker, faça no terminal:
+
+1) Clone o repositório:
 ```bash
 git clone --depth 1 https://github.com/FrankleyRocha/php_pdo_example
+```
+2) Acesse a pasta da aplicação:
+```bash
 cd php_pdo_example
+```
+
+3) Rode o script:
+```bash
 ./run_example.sh
 ```
 
-- Para parar a execução do container, execute no terminal:
+## Para parar a execução do container, execute no terminal:
 ```bash
 docker stop php_pdo_example
 ```
 
-- Para iniciar a execução do container, execute no terminal:
+## Para iniciar a execução do container, execute no terminal:
 ```bash
 docker start php_pdo_example
 ```
 
-- Para parar e remover o container, execute no terminal:
+## Para parar e remover o container, execute no terminal:
 ```bash
 docker rm php_pdo_example --force
 ```
