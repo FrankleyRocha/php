@@ -37,5 +37,5 @@ docker start php_pdo_example
 
 Para remover o container, execute no terminal:
 ```bash
-docker rm php_pdo_example
+docker rm php_pdo_example --force
 ```
