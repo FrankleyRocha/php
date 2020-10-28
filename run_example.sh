@@ -9,7 +9,9 @@ docker run \
     mattrayner/lamp:latest-1804
 
 function create_php_pdo_example_db {
-    #criação do banco de dados
+    sleep 1    
+    printf '.'
+    
     docker exec php_pdo_example \
         sh -c 'mysql -u root < /app/db.sql' \
         2>/dev/null \
@@ -17,18 +19,20 @@ function create_php_pdo_example_db {
 }
 
 echo 'aguarde um momento, inicializando.'
-sleep 1
-create_php_pdo_example_db
 
-until [ $? -eq 0 ]; do
-    #aguarda um minuto para inicializar os serviçes (apache, mysql e etç)
+#aguarda inicializar o apache
+while [ $(docker exec php_pdo_example sh -c 'service apache2 status' | grep 'apache2 is running' -c) -eq 0 ];do
     sleep 1
-    #criação do banco de dados
     printf '.'
-    create_php_pdo_example_db
 done
 
-echo '';
+#criação do banco de dados
+create_php_pdo_example_db
+    #caso não execute com sucesso,
+    #tenta executar até que os serviçes (apache, mysql e etç)
+    until [ $? -eq 0 ]; do            
+        create_php_pdo_example_db
+    done
 
 if [ $? -eq 0 ]
 then
