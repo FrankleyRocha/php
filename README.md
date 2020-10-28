@@ -8,7 +8,7 @@ docker run -it --rm \
     mattrayner/lamp:latest-1804
 ```
 
-## a pasta app apontará para a pasta raiz de http://localhost
-## a pasta mysql conterá os dados do banco mysql
+## a pasta app, apontará para a pasta raiz de http://localhost
+## a pasta mysql, conterá os dados do banco mysql
 
 ### pdo - exemplo básico de CRUD com PDO e mysql
