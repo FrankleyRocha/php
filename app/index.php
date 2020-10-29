@@ -1,64 +1,59 @@
-<?php
-    require_once './config.php';
-    require_once './db/db.php';
-    
-    try{      
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>PHP PDO Example</title>
+
+        <!-- CSS  -->  
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         
-        //DELETE id:1
-        query(
-            'delete from pessoa where id = :id',
-            [
-                id => 1
-            ]
-        );
+    </head>
+    <body>
+        <nav class="blue" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="<?php echo $_SERVER['REQUEST_URI'] ?>" class="brand-logo">
+                    PHP PDO Example
+                </a>
+            </div>
+        </nav>
 
-        //DELETE ALL
-        query(
-            'delete from pessoa'
-        );
+        <div class="section no-pad-bot" id="index-banner">
 
-        //INSERT
-        query(
-            'insert into pessoa (id,nome,telefone) values (:id,:nome,:telefone)',
-            [
-                nome => 'teste',
-                id => 1,
-                telefone => '99999'
-            ]
-        );
+            <div class="container">
+        
+                <?php
+                    include_once './db/db.php';
+                    
+                    $op = $_POST['op'];
 
-        //MULTI INSERTS
-        foreach([
-            'João',
-            'Maria',
-            'Gabriel'
-        ] as $nome ){
-            query(
-                'insert into pessoa (nome,telefone) values (:nome,:telefone)',
-                [
-                    nome => $nome,
-                    telefone => '99999'
-                ]
-            );
-        };
+                    if(!$op || $op == 'list'):                        
 
-        //UPDATE
-        query(
-            'update pessoa set nome = :nome where id = :id',
-            [
-                nome => 'teste x',
-                id => 1
-            ]
-        );
-    
-        //LIST OR READ
-        echo json_encode(
-            query(
-                'select * from pessoa'
-            )
-        );
+                        include_once './listar.php';
 
-    }catch(Exception $e){
-        echo $e;
-    }
-?>
+                    elseif ($op == 'edit'):
+                                            
+                        include_once './editar.php';
+
+                    elseif ($op == 'new'):
+
+                        include_once './novo.php';
+
+                    endif;
+                ?>
+            </div>
+            
+        </div>
+
+        <!--  Scripts-->        
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>                
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                M.AutoInit();      
+            });
+        </script>
+
+    </body>
+</html>
