@@ -4,10 +4,10 @@ if( isset($_POST['actionEdit']) ):
     query(
         'update pessoa set nome = :nome, telefone = :telefone, email = :email where id = :id',
         [
-            id => $_POST['id'],
-            nome => $_POST['nome'],
-            telefone => $_POST['telefone'],
-            email => $_POST['email']                                
+            id => filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT),
+            nome => filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING),
+            telefone => filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING),
+            email => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING)                               
         ]
     );
 
@@ -16,9 +16,9 @@ elseif( isset($_POST['actionNew']) ):
     query(
         'insert into pessoa (nome,telefone,email) values (:nome,:telefone,:email)',
         [
-            nome => $_POST['nome'],
-            telefone => $_POST['telefone'],
-            email => $_POST['email']
+            nome => filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING),
+            telefone => filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING),
+            email => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING) 
         ]
     );
 
@@ -27,7 +27,7 @@ elseif( isset($_POST['actionDelete']) ):
     query(
         'delete from pessoa where id = :id',
         [
-            id => $_POST['id']
+            id => filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT)
         ]
     );
                             
